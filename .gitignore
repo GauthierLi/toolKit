@@ -1,7 +1,8 @@
-/bin
-/obj
+/Cplustoolkit/bin
+/Cplustoolkit/obj
 *.cbp
 *.depend
 *.layout
 *.exe
 *.o
+*.idea

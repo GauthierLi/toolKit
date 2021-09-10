@@ -162,3 +162,34 @@ void readCsv(char *fileName,int line_pre, int line_end, vector<vector<float> > &
 
 }
 
+
+void OneDlinearRegression(vector<vector<float> >data, float *w/** out */, float b/** out */){
+    /** get the parametres of linear regression*/
+    // the form of data is a matrix of n*2
+    float tmp_sum1 = 0.0, tmp_sumSquar = 0.0, tmp_sum2 = 0.0, tmp_average = 0.0, tmp_b = 0.0;
+    int tmp_num = 0;
+    for(vector<vector<float> >::iterator it1 = data.begin(); it1 != data.end(); it1++){
+        tmp_average += (*it1)[0];
+        tmp_num ++;
+    }
+    tmp_average = tmp_average/tmp_x;
+
+    for(vector<vector<float> >::iterator it1 = data.begin(); it1 != data.end(); it1++){
+        tmp_sum1 += (*it1)[1]*((*it1)[0] - tmp_average);
+    }
+
+    for(vector<vector<float> >::iterator it1 = data.begin(); it1 != data.end(); it1++){
+        tmp_sumSquar += (*it1) * (*it1);
+    }
+
+    tmp_sum2 = tmp_num * tmp_average * tmp_average;
+
+    *w = tmp_sum1/(tmp_sumSquar - tmp_sum2);
+
+    for(vector<vector<float> >::iterator it1 = data.begin(); it1 != data.end(); it1++){
+        tmp_b += (*it1)[1] - (*w) * ((*it1)[0]);
+    }
+    tmp_b = tmp_b / tmp_num;
+    *b = tmp_b;
+}
+

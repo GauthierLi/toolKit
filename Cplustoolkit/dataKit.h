@@ -26,4 +26,8 @@ float findMinMax(float *p1, int len, int n);
 /**read csv as a matrix*/
 void readCsv(char *fileName,int line_pre, int line_end, vector<vector<float> > &data/**out*/);
 
+/** get the parametres of linear regression*/
+void OneDlinearRegression(vector<vector<float> >data, float *w/** out */, float b/** out */);
+
+
 #endif // DATAKIT_H_INCLUDED
