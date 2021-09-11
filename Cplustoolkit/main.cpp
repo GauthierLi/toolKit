@@ -39,6 +39,20 @@ int main()
         }
         printf("\n");
 	}
+
+	printf("-------------------------linear regression ----------------------------\n");
+	vector<vector< float> >dataLr;
+	float w, b;
+	for(int i = 0; i < 5; i++){
+        vector<float> tmp;
+        tmp.push_back(i);
+        tmp.push_back(i+1);
+        dataLr.push_back(tmp);
+	}
+	printVec2D(dataLr);
+	OneDlinearRegression(dataLr, &w, &b);
+	printf("w: %.2f\nb: %.2f\n",w,b);
+
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;
 }
