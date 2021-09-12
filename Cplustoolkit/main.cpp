@@ -1,7 +1,8 @@
 /**test only*/
 #include <iostream>
 #include <bits/stdc++.h>
-#include "dataKit.h"
+#include "headers/dataKit.h"
+#include "headers/myMatrix.h"
 
 using namespace std;
 
@@ -52,6 +53,17 @@ int main()
 	printVec2D(dataLr);
 	OneDlinearRegression(dataLr, &w, &b);
 	printf("w: %.2f\nb: %.2f\n",w,b);
+
+
+    printf("----------------------- matrix test -----------------------------------\n");
+    myMatrix mat1;
+    mat1.setRowandCol(3,3);
+    printf("before define matrix\n");
+    mat1.printMat();
+    printf("please input %d*%d matrix:\n",mat1.row, mat1.col);
+    mat1.defMat();
+    printf("after define matrix\n");
+    mat1.printMat();
 
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;

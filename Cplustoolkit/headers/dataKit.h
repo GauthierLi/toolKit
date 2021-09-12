@@ -23,7 +23,6 @@ int minMaxScaler(float *p1, int len);
 /**Find minimum num, 0 represent minimum, 1 represent maximum.*/
 float findMinMax(float *p1, int len, int n);
 
-
 /**read csv as a matrix*/
 void readCsv(char *fileName,int line_pre, int line_end, vector<vector<float> > &data/**out*/);
 
