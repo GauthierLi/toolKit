@@ -18,13 +18,20 @@ class myMatrix
         void defMat();
         //swap the row and column
         void swapRC(int r, int c, char type/** "r" for row and "c" for col*/);
-        //basic shift of matrix
-        void shiftRC(int r, int r_, int c, int c_, char type/** "r" for row and "c" for col*/);
+        vector<vector<float> > swapRC_(int r, int c, char type/** "r" for row and "c" for col*/);
+        //basic shift of matrix,add c*c_ to r
+        void shiftRC(int r, int c, float c_, char type/** "r" for row and "c" for col*/);
+        vector<vector<float> > shiftRC_(int r, int c, float c_, char type/** "r" for row and "c" for col*/);
         //transpose
         void trans();
-
+        vector<vector<float> > trans_();
         //inverse mat
-        vector<vector<float> > inverse();
+        void inverse();
+        vector<vector<float> > inverse_();
+
+
+        //get the determinant
+        float det();
 
 };
 

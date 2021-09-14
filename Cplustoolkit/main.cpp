@@ -56,7 +56,7 @@ int main()
 
 
     printf("----------------------- matrix test -----------------------------------\n");
-    myMatrix mat1;
+/*    myMatrix mat1;
     mat1.setRowandCol(3,3);
     printf("before define matrix\n");
     mat1.printMat();
@@ -64,6 +64,32 @@ int main()
     mat1.defMat();
     printf("after define matrix\n");
     mat1.printMat();
+    printf("change the row1 ,row3 \n");
+    mat1.swapRC(1,3,'r');
+    mat1.printMat();
+    printf("change the col1 ,col3 \n");
+    mat1.swapRC(1,3,'c');
+    mat1.printMat();
+    printf("add the row2 * 2 to row1 \n");
+    mat1.shiftRC(1,2,2,'r');
+    mat1.printMat();
+    printf("add the col2 * 2 to col1 \n");
+    mat1.shiftRC(1,2,2,'c');
+    mat1.printMat();
+    printf("after transpose\n");
+    mat1.trans();
+    mat1.printMat();
+    printf("\n");
+*/
+
+    myMatrix mat2;
+    mat2.setRowandCol(3,3);
+    printf("please input %d*%d matrix:\n",mat2.row, mat2.col);
+    mat2.defMat();
+    printf("after inverse:\n");
+    mat2.inverse();
+    mat2.printMat();
+   // mat1.printMat();
 
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;

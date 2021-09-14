@@ -1,5 +1,4 @@
-/Cplustoolkit/bin
-/Cplustoolkit/obj
+# codeblocks file
 *.cbp
 *.depend
 *.layout

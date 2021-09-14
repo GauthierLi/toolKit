@@ -16,14 +16,14 @@ using namespace std;
 void printVecOneD(vector<float> vec){
     /** print 1D vector */
     for(vector<float>::iterator it = vec.begin(); it != vec.end(); it++){
-        printf("%.2f ",*it);
+        printf("%.5f ",*it);
     }
     printf("\n");
 }
 void printVec2D(vector<vector<float> > vec){
     for(vector<vector<float> >::iterator it = vec.begin(); it != vec.end();it++){
         for(vector<float>::iterator it1 = (*it).begin(); it1 != (*it).end(); it1++){
-            printf("%.2f ",*it1);
+            printf("%.5f ",*it1);
         }
         printf("\n");
     }
