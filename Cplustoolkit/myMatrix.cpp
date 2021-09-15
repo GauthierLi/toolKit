@@ -5,6 +5,7 @@
 #include <cstring>
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -137,3 +138,24 @@ void myMatrix::inverse(){
 }
 //example could inverse 1 0 -1 1 -1 1 0 1 0
 
+vector<vector<float> > myMatrix::cominor(vector<vector<float> > nmat, int r, int c){
+    nmat.erase(nmat.begin() + r - 1);
+    for(vector<vector<float> >::iterator it = nmat.begin();it != nmat.end();it++){
+        (*it).erase((*it).begin() + c - 1);
+    }
+    return nmat;
+}
+
+
+float myMatrix::det(vector<vector<float> >mat){
+    if(mat.size() == 1){
+        return mat[0][0];
+    }
+    vector<vector<float> > nMat;
+    nMat = mat;
+    float result = 0.0;
+    for(int i = 0; i < nMat[0].size();i++){
+        result += pow(-1,i) * nMat[0][i] * det(cominor(mat,1,i+1));
+    }
+    return result;
+}

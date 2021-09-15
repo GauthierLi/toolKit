@@ -30,8 +30,10 @@ class myMatrix
         vector<vector<float> > inverse_();
 
 
+        //get the cominor
+        vector<vector<float> > cominor(vector<vector<float> > nmat,int r, int c);
         //get the determinant
-        float det();
+        float det(vector<vector<float> > mat);
 
 };
 

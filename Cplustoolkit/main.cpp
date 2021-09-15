@@ -6,6 +6,27 @@
 
 using namespace std;
 
+vector<vector<float> > getATestMat(){
+    //1 0 -1 1 -1 1 0 1 0
+    vector<vector<float> > tmp;
+    vector<float> tmpV;
+    tmpV.push_back(1);
+    tmpV.push_back(0);
+    tmpV.push_back(-1);
+    tmp.push_back(tmpV);
+    tmpV.clear();
+    tmpV.push_back(1);
+    tmpV.push_back(-1);
+    tmpV.push_back(1);
+    tmp.push_back(tmpV);
+    tmpV.clear();
+    tmpV.push_back(0);
+    tmpV.push_back(1);
+    tmpV.push_back(0);
+    tmp.push_back(tmpV);
+    return tmp;
+}
+
 int main()
 {
     printf("**************************** DATA_TESTING *****************************\n");
@@ -85,12 +106,23 @@ int main()
     myMatrix mat2;
     mat2.setRowandCol(3,3);
     printf("please input %d*%d matrix:\n",mat2.row, mat2.col);
-    mat2.defMat();
-    printf("after inverse:\n");
+    mat2.myMat = getATestMat();
+
+/*    printf("after inverse:\n");
     mat2.inverse();
     mat2.printMat();
    // mat1.printMat();
 
+    vector<vector<float> > testVec; //test for cominor
+    testVec = mat2.cominor(mat2.myMat,2,2);
+    printVec2D(testVec);*/
+
+    printf("test det of:\n");
+    mat2.printMat();
+    float det = mat2.det(mat2.myMat);
+    printf("det of mat2: %.2f\n",det);
+
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;
 }
+
