@@ -18,6 +18,7 @@ class myMatrix
         void defMat();
         //swap the row and column
         void swapRC(int r, int c, char type/** "r" for row and "c" for col*/);
+        //the bar '_' means which does not change the value of origin mat vector,and return the result
         vector<vector<float> > swapRC_(int r, int c, char type/** "r" for row and "c" for col*/);
         //basic shift of matrix,add c*c_ to r
         void shiftRC(int r, int c, float c_, char type/** "r" for row and "c" for col*/);

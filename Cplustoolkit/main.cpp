@@ -111,7 +111,7 @@ int main()
 /*    printf("after inverse:\n");
     mat2.inverse();
     mat2.printMat();
-   // mat1.printMat();
+    mat1.printMat();
 
     vector<vector<float> > testVec; //test for cominor
     testVec = mat2.cominor(mat2.myMat,2,2);
@@ -121,6 +121,10 @@ int main()
     mat2.printMat();
     float det = mat2.det(mat2.myMat);
     printf("det of mat2: %.2f\n",det);
+
+    //test for trans_() which return a new 2D vector does not change the origin value of mat
+    printVec2D(mat2.trans_());
+    mat2.printMat();
 
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;

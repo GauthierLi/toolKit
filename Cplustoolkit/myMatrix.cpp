@@ -53,6 +53,15 @@ void myMatrix::swapRC(int r, int c, char type/** "r" for row and "c" for col*/){
     }
 }
 
+vector<vector<float> > myMatrix::swapRC_(int r, int c, char type){
+    vector<vector<float> > oriVec,tmpVec;
+    oriVec = myMat;
+    swapRC(r,c,type);
+    tmpVec = myMat;
+    myMat = oriVec;
+    return tmpVec;
+}
+
 void myMatrix::shiftRC(int r, int c, float c_, char type/** "r" for row and "c" for col*/){
     if(r < 1 || r > row || c < 1 || c > col){
         printf("error: please check the value of r or c!\n");
@@ -84,6 +93,15 @@ void myMatrix::shiftRC(int r, int c, float c_, char type/** "r" for row and "c" 
     }
 }
 
+vector<vector<float> > myMatrix::shiftRC_(int r,int c, float c_,char type){
+    vector<vector< float> > oriVec, tmpVec;
+    oriVec = myMat;
+    shiftRC(r,c,c_,type);
+    tmpVec = myMat;
+    myMat = oriVec;
+    return tmpVec;
+}
+
 void myMatrix::trans(){
     vector<vector<float> >tmp_vec;
     int tmp_int;
@@ -99,6 +117,15 @@ void myMatrix::trans(){
     tmp_vec.push_back(tmp_vec2);
     }
     myMat = tmp_vec;
+}
+
+vector<vector<float> > myMatrix::trans_(){
+    vector<vector<float> > oriVec,tmpVec;
+    oriVec = myMat;
+    trans();
+    tmpVec = myMat;
+    myMat = oriVec;
+    return tmpVec;
 }
 
 void myMatrix::inverse(){
@@ -137,6 +164,15 @@ void myMatrix::inverse(){
     }
 }
 //example could inverse 1 0 -1 1 -1 1 0 1 0
+
+vector<vector<float> > myMatrix::inverse_(){
+    vector<vector<float> > oriVec, tmpVec;
+    oriVec = myMat;
+    inverse();
+    tmpVec = myMat;
+    myMat = oriVec;
+    return tmpVec;
+}
 
 vector<vector<float> > myMatrix::cominor(vector<vector<float> > nmat, int r, int c){
     nmat.erase(nmat.begin() + r - 1);
