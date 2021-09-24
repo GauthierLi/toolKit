@@ -13,6 +13,7 @@
 using namespace std;
 
 
+
 void printVecOneD(vector<float> vec){
     /** print 1D vector */
     for(vector<float>::iterator it = vec.begin(); it != vec.end(); it++){

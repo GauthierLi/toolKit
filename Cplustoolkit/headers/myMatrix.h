@@ -10,6 +10,7 @@ class myMatrix
         int row = 0;
         int col = 0;
 
+        void getRowandCol();
         //definite the row and column
         void setRowandCol(int r, int c);
         //print matrix
@@ -29,6 +30,7 @@ class myMatrix
         //inverse mat
         void inverse();
         vector<vector<float> > inverse_();
+        vector<vector<float> > mul(vector<vector<float> > mat);
 
 
         //get the cominor
@@ -37,5 +39,6 @@ class myMatrix
         float det(vector<vector<float> > mat);
 
 };
+
 
 #endif // MYMATRIX_H

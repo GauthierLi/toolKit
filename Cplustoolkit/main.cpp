@@ -103,19 +103,18 @@ int main()
     printf("\n");
 */
 
-    myMatrix mat2;
+/*    myMatrix mat2;
     mat2.setRowandCol(3,3);
     printf("please input %d*%d matrix:\n",mat2.row, mat2.col);
     mat2.myMat = getATestMat();
 
-/*    printf("after inverse:\n");
+    printf("after inverse:\n");
     mat2.inverse();
     mat2.printMat();
-    mat1.printMat();
 
     vector<vector<float> > testVec; //test for cominor
     testVec = mat2.cominor(mat2.myMat,2,2);
-    printVec2D(testVec);*/
+    printVec2D(testVec);
 
     printf("test det of:\n");
     mat2.printMat();
@@ -125,6 +124,21 @@ int main()
     //test for trans_() which return a new 2D vector does not change the origin value of mat
     printVec2D(mat2.trans_());
     mat2.printMat();
+*/
+
+    printf("\n");
+    printf("origin matrix:\n");
+    vector<vector<float> > a = {{1,0,0,1},{-1,1,0,0},{0,-1,1,0},{0,0,-1,1}};
+    printVec2D(a);
+    printf("after inverse:\n");
+    myMatrix mat3;
+    mat3.myMat = a;
+    mat3.inverse();
+    mat3.printMat();
+    printf("\n");
+
+    printf("verify mat.inverse*mat:\n");
+    printVec2D(mat3.mul(a));
 
     printf("**************************** DATA_TESTING *****************************\n");
     return 0;

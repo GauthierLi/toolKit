@@ -9,6 +9,11 @@
 
 using namespace std;
 
+void myMatrix::getRowandCol(){
+    row = myMat.size();
+    col = myMat[0].size();
+}
+
 //definite the row and column
 void myMatrix::setRowandCol(int r, int c){
     row = r;
@@ -37,6 +42,7 @@ void myMatrix::defMat(){
 }
 
 void myMatrix::swapRC(int r, int c, char type/** "r" for row and "c" for col*/){
+    getRowandCol();
     //swap the row and column
     if(type == 'r'){
         vector<float> tmpVec;
@@ -63,6 +69,7 @@ vector<vector<float> > myMatrix::swapRC_(int r, int c, char type){
 }
 
 void myMatrix::shiftRC(int r, int c, float c_, char type/** "r" for row and "c" for col*/){
+    getRowandCol();
     if(r < 1 || r > row || c < 1 || c > col){
         printf("error: please check the value of r or c!\n");
         return;
@@ -103,6 +110,7 @@ vector<vector<float> > myMatrix::shiftRC_(int r,int c, float c_,char type){
 }
 
 void myMatrix::trans(){
+    getRowandCol();
     vector<vector<float> >tmp_vec;
     int tmp_int;
     tmp_int = row;
@@ -129,6 +137,7 @@ vector<vector<float> > myMatrix::trans_(){
 }
 
 void myMatrix::inverse(){
+    getRowandCol();
     //have some bug, cannot verify whether could it inverse
     if(row != col){
         printf("error : could not inverse!\n");
@@ -193,5 +202,29 @@ float myMatrix::det(vector<vector<float> >mat){
     for(int i = 0; i < nMat[0].size();i++){
         result += pow(-1,i) * nMat[0][i] * det(cominor(mat,1,i+1));
     }
+    return result;
+}
+
+vector<vector<float> > myMatrix::mul(vector<vector<float> > mat){
+    getRowandCol();
+    vector<vector<float> > result;
+    int r = row;
+    int c = mat[0].size();
+    if(col != mat.size()){
+        printf("error : the row of mymat does not match the target col!\n");
+    }
+
+    for(int i = 0; i < r; i++){
+        vector<float> tmpVec;
+        for(int j = 0; j < c; j++){
+            float tmp_f = 0;
+            for(int k = 0; k < col ;k++){
+                tmp_f += myMat[i][k] * mat[k][j];
+            }
+            tmpVec.push_back(tmp_f);
+        }
+        result.push_back(tmpVec);
+    }
+
     return result;
 }
