@@ -43,5 +43,5 @@ if __name__ == '__main__':
     l1 = despPoint(1, 11, 1)
     l2 = despPoint(4, 14, 1)
 
-    draw(l1, l2, 'pic1')
+    draw(l1, l2, 'pic1', "scatter")
     plt.show()
